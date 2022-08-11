@@ -1,0 +1,21 @@
+{% include "head.html" %}
+<div class="global-wrapper">
+
+    {% include "header.html" with categories=categories %}
+
+    <!-- MAIN -->
+    <div class="main">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <!-- /MAIN -->
+
+    {% include "hidden-block.html" %}
+    {% include "footer.html" %}
+
+</div>
+
+{% include "scripts.html" %}
+
+</body>
+</html>

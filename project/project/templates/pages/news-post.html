@@ -1,0 +1,9 @@
+{% extends '../base.html' %}
+
+{% block content %}
+    {% include "../partials/top-content.html" %}
+    {% include "../partials/news-post/news-content-section.html" with object=object last_posts=last_posts %}
+    {% include "../partials/news-post/news-important-section.html" %}
+    {% include "../partials/news-post/news-bg-section.html" %}
+    {% include "../partials/form-section.html" %}
+{% endblock %}

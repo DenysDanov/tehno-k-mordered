@@ -1,0 +1,26 @@
+{% load static %}
+<div class="important-services-section section subsection ctext">
+    <div class="important-bg"></div>
+    <div class="wrapper">
+        <div class="section-title sub-section-title title">
+            <h2>Почему важно</h2>
+        </div>
+        <div class="important-blocks">
+            {% for important in object.important.all %}
+            <div class="important-block">
+                <div class="important-img">
+                    <object type="image/svg+xml" data="{% static 'images/important-icon.svg' %}" width="59" height="59">
+                        <img src="{{ MEDIA_URL }}{{ important.image }}" width="59" height="59" />
+                    </object>
+                </div>
+                <div class="important-title title">
+                    <h5>{{ important.title }}</h5>
+                </div>
+                <div class="text">
+                    <p> {{ important.text }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

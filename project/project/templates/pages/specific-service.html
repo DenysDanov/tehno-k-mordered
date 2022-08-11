@@ -1,0 +1,10 @@
+{% extends '../base.html' %}
+
+{% block content %}
+    {% include "../partials/top-content.html" %}
+    {% include "../partials/specific-service/tabs-section.html" with object=object %}
+    {% include "../partials/specific-service/important-section.html" with object=object %}
+    {% include "../partials/specific-service/how-work-section.html" with object=object %}
+    {% include "../partials/specific-service/we-do-section.html" with object=object %}
+    {% include "../partials/form-section.html" %}
+{% endblock %}

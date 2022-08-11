@@ -1,0 +1,7 @@
+{% extends '../base.html' %}
+
+{% block content %}
+    {% include "../partials/top-content.html" %}
+    {% include "../partials/services/all-services-section.html"  with object_list=categories %}
+    {% include "../partials/seo-section.html" %}
+{% endblock %}

@@ -1,0 +1,24 @@
+<div class="form-section section">
+    <div class="wrapper">
+        <div class="section-request">
+            <div class="form-title title">
+              <h5>Оставьте свои контакты и мы перезвоним через 5 минут</h5>
+            </div>
+            <form action="{% url 'callrequest:request' %}" class="request-form contact-from form">
+              {% csrf_token %}
+              <div class="form-inputs">
+                <div class="form-row form_input">
+                    <input type="text" placeholder="Введите имя" required>
+                </div>
+                <div class="form-row form_input">
+                    <input type="tel" class="tel tel-mask " placeholder="Телефон" name="ph" required data-rule-required="true" data-rule-minlength="10" data-msg="Телефон">
+                </div>
+                <button type="submit" class="button yellow">Заказать услугу</button>
+              </div>
+              <div class="form-text text">
+                <p>Отправляя форму, Вы соглашаетесь на политику обработки персональных данных</p>
+              </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="pagination-section section">
+    <div class="wrapper">
+        <div class="pagination">
+            <div class="item pagination-prev">
+                <a href='?page={{ page_obj.number|add:"-1" }}'></a>
+            </div>
+            {% with ''|center:page_obj.paginator.num_pages as range %}
+            {% for forloop.counter in range %}
+            {% if forloop.counter < 3 or forloop.counter > page_obj.paginator.num_pages|add:"-3"  %}
+            <div class="item {% if forloop.counter == page_obj.number %}pagination-active{% endif%}">
+                <span><a href="?page={{ forloop.counter }}"></a>
+                    {% if forloop.counter == 3 and forloop.counter < page_obj.paginator.num_pages|add:"-3" %}
+                    ...
+                    {% else %}
+                    {{forloop.counter}}
+                    {% endif %}
+                </span>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endwith %}
+            <div class="item pagination-next">
+                <a href='?page={{ page_obj.number|add:"1" }}'></a>
+            </div>
+    </div>
+</div>

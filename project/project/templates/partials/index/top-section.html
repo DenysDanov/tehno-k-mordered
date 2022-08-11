@@ -1,0 +1,91 @@
+{% load static %}
+<div class="top-section section">
+  <div class="slider-bg"></div>
+  <div class="top-section-slider">
+    <div class="slider-item">
+      <img src="{% static 'images/top-section-slide-img.png' %}" alt="">
+    </div>
+    <div class="slider-item">
+      <img src="{% static 'images/top-section-slide-img.png' %}" alt="">
+    </div>
+    <div class="slider-item">
+      <img src="{% static 'images/top-section-slide-img.png' %}" alt="">
+    </div>
+    <div class="slider-item">
+      <img src="{% static 'images/top-section-slide-img.png' %}" alt="">
+    </div>
+    <div class="slider-item">
+      <img src="{% static 'images/top-section-slide-img.png' %}" alt="">
+    </div>
+    <div class="slider-item">
+      <img src="{% static 'images/top-section-slide-img.png' %}" alt="">
+    </div>
+  </div>
+  <div class="wrapper top-section-wrapper">
+      <div class="desktop-main-menu">
+        <div class="main-menu">
+          <a href=""><span>Кадровый консалтинг</span></a>
+          <a href=""><span>Налоговый консалтинг</span></a>
+          <a href=""><span>Аудиторские услуги</span></a>
+        </div>
+      </div>
+    <div class="top-section-content">
+      <div class="top-section-propositions">
+        <div class="top-section-proposition-block">
+          <div class="propositions-title title">
+            <h2>Доход</h2>
+          </div>
+          <div class="proposition-text text">
+            <p>Проанализируем, куда вложить свои свободные средства для получения пасивного дохода <span></span></p>
+          </div>
+        </div>
+        <div class="top-section-proposition-block">
+          <div class="propositions-title title">
+             <h2>Кредиты</h2>
+          </div>
+          <div class="proposition-text text">
+             <p>Поможем быстрее и эффективнее избавится от долгов и кредитов<span></span></p>
+          </div>
+        </div>
+        <div class="top-section-proposition-block">
+          <div class="propositions-title title">
+            <h2>Партнеры</h2>
+          </div>
+          <div class="proposition-text text">
+             <p>Найдем для вас самые выгодные партнерские проекты, участвуя в которых, вы также сможете получать хороший доход<span></span></p>
+          </div>
+        </div>
+          <div class="top-section-proposition-block">
+            <div class="propositions-title title">
+              <h2>Финансы</h2>
+            </div>
+            <div class="proposition-text text">
+              <p>Решим любые финансовые вопросы<span></span></p>
+            </div>
+          </div>
+      </div>
+      <div class="top-section-request">
+        <div class="form-title title">
+          <h1>Масштабируем<br/> ваши возможности</h1>
+        </div>
+        <form action="{% url 'callrequest:request' %}" method='post' class="request-form top-request-form form">
+          {% csrf_token %}
+          <div class="form-row form_input">
+              <input name="name" type="text" placeholder="Введите имя" required>
+          </div>
+          <div class="form-row form_input">
+              <input type="tel" class="tel tel-mask " placeholder="Телефон" name="ph" required data-rule-required="true" data-rule-minlength="10" data-msg="Телефон">
+          </div>
+          <button type="submit" class="button yellow">Оставить заявку</button>
+          <div class="form-text text">
+            <p>Отправляя форму, Вы соглашаетесь на политику обработки персональных данных</p>
+          </div>
+        </form>
+        <div class="slider-buttons">
+          <button class="slider-arrow slider-prev"></button>
+          <button class="slider-arrow slider-next"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

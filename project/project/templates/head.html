@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <meta id="viewport" name="viewport" content="width=device-width, user-scalable=yes">
+    <meta name="format-detection" content="telephone=no">
+
+    <meta name="HandheldFriendly" content="false"/>
+    <meta name="format-detection" content="telephone=no">
+    {% load static %}
+    {% load compress %}
+
+    {% compress css inline %}
+    <!-- build:css styles/plagins.scss -->
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'styles/fancybox.scss' %}">
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'styles/formstyler.scss' %}">
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'styles/normalize.scss' %}">
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'styles/slick.scss' %}">
+        <!-- add you plagin css here -->
+
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.scss -->
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'styles/index.scss' %}">
+    <link rel="stylesheet" type="text/x-scss" href="{% static 'styles/dev_1_adapt.scss' %}">
+        <!-- add you develop css here -->
+    {% endcompress %}
+    <!-- endbuild -->
+</head>
+<body>

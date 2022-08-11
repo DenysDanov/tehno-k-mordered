@@ -1,0 +1,49 @@
+<div class="services-section section sub-section">
+    <div class="wrapper">
+        <div class="section-title sub-section-title title">
+            <h2>Услуги и решения</h2>
+        </div>
+    </div>
+    <div class="all-services">
+        {% for category in categories %}
+        <div class="service">
+            <div class="wrapper services-wrapper">
+                <div class="services-type">
+                    <div class="top-info">
+                        <div class="type-info-title title">
+                            <h3>{{ category.name }}</h3>
+                        </div>
+                        <div class="type-info-text text">
+                            <p>{{ category.descr }}</p>
+                        </div>
+                    </div>
+                    <a href="#requestPopup" class="button black modal-open service-subcat" data-subcat="name">Задать вопрос</a>
+                </div>
+                <div class="type-items">
+                    {% for service in category.services.all %}
+                    <div class="type-item">
+                        <div class="item-image">
+                            <img src="{{ MEDIA_URL }}{{ service.image }}" alt="">
+                        </div>
+                        <div class="item-content">
+                            <div class="item-title title">
+                                <h4>{{ service.name }}</h4>
+                            </div>
+                            <div class="item-text text">
+                                <p>{{ service.descr }}</p>
+                            </div>
+                        </div>
+                        <div class="item-links">
+                                <a href="#requestPopup" class="button yellow modal-open service-cat" data-category="category-{{ loop.index }}">Заказать</a>
+                                <div class="read-all">
+                                    <a href="{% url 'services:detail' service.slug %}">Читать подробнее</a>
+                                </div>
+                        </div>
+                    </div>
+                    {% endfor%}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

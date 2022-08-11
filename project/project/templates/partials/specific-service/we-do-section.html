@@ -1,0 +1,33 @@
+<div class="we-do-serv-section sub-section section ctext">
+  <div class="wrapper">
+    <div class="we-do-serv-content">
+      <div class="title">
+         <h4>Чем занимаемся</h4>
+      </div>
+      <div class="we-do-serv-block">
+        <div class="we-do-serv-info">
+          <div class="text">
+            <p>{{ object.whatwedo.text_main }}</p>
+          </div>
+          <div class="text">
+            <p>{{ object.whatwedo.text_second }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="we-do-serv-block we-do-serv-list">
+        <div class="we-do-serv-info ">
+          <ul>
+            {% for li in object.ul.all %}
+              <li>{{ li.text }}</li>
+            {% endfor %}
+          </ul>
+          <ol>
+            {% for li in object.ol.all %}
+              <li>{{ li.text }}</li>
+            {% endfor %}
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

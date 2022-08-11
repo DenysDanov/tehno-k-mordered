@@ -1,0 +1,19 @@
+
+{% load static %}
+<div class="seo-section section">
+  <div class="wrapper">
+      <div class="seo-info">
+      <div class="seo-title title sub-section-title">
+          <h2>{{ preferences.MyPreferences.seo_block_title }}</h2>
+      </div>
+      <div class="seo-text text">
+          <p>{{ preferences.MyPreferences.seo_block_text }}</p>
+      </div>
+      <a href="{% url 'news:index' %}" class="button red">Читать больше</a>
+  </div>
+  <div class="seo-image animate-it animate-delay">
+      <div class="scroll-line"></div>
+      <img src="{{ MEDIA_URL }}{{ preferences.MyPreferences.seo_block_image }}" alt="">
+  </div>
+  </div>
+</div>

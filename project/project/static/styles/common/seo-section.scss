@@ -1,0 +1,59 @@
+@import './../variables.scss';
+
+.seo-section{
+    background-image: url("../images/about-us-section-bg.png"); background-repeat: no-repeat; background-position: center; padding:40px 0;
+    .wrapper{
+        display: flex; flex-flow: row nowrap; justify-content: space-between; align-items: center;padding: 0 15px;}
+    .seo-info{max-width: 50%;display:flex; flex-flow: column nowrap; justify-content: space-between;
+        .seo-title > * {margin-top:0; padding-top: 50px;}
+        .seo-text > *{padding-right:38px;}
+        .button{margin:44px 0 50px 0;}
+    }
+    .seo-image{ width:50%; height: 100%;
+        img{width: 100%;opacity:0;z-index:500; height: 100%; object-fit: cover;}
+        &.animated{
+            @keyframes scroll-line-animation {
+                0%{width: 0}
+                50%{width: 50%}
+                100%{width: 100%}
+            }
+            @keyframes image-animation {
+                0%{opacity: 0}
+                50%{opacity: 0.5}
+                100%{opacity: 1}
+            }
+            .scroll-line{height: 4px;background-color: $yellow;width: 0;animation: scroll-line-animation 2s linear; position: relative; top:0; z-index:1000;}
+            img{animation: image-animation 2s linear both}
+        }
+    }
+}
+
+@media screen and (min-width:1900px){
+    .seo-section{background-size:100% 100%}
+}
+
+
+
+@media screen and (max-width: 992px){
+    .seo-section{
+        .seo-info{max-width:calc(100% - 30px); text-align:center; margin: 0 auto;
+            .seo-title > *{text-align:center; padding-top:0;}
+            .seo-text > *{padding:0;}
+            .button{margin: 44px auto 0 auto;}
+        }
+        .seo-image{display:none;}
+    }
+}
+
+@media screen and (max-width: 666px){
+    .seo-section{padding:20px 0; background-color: $yellow; background-image: url("../images/about-mobile-bg.png"); background-position:50% 0%; background-repeat: no-repeat; background-size: 100%;
+        .seo-info{
+            .seo-title{padding: 0;
+                & > *{margin: 0;}
+            }
+            .seo-text{padding-top: 30px;
+                & > *{margin-top: 0;}
+            }
+        }
+    }
+}

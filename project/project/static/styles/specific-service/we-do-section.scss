@@ -1,0 +1,30 @@
+@import './../variables.scss';
+
+.we-do-serv-section{padding: 0}
+.we-do-serv-content{display: flex;flex-flow: row wrap;align-items: flex-start;margin: 50px 0 0 0;width: 100%;justify-content: space-between;
+    .title{width: 100%;
+            & > *{text-transform: none;line-height: 25px;margin: 10px 0; font-size:24px}
+            &:after{content: '';display: block;border: 2px solid $yellow;width: 8%;margin-top: 20px}
+    }
+    .text > *{line-height: 31px;margin-bottom: 40px;}
+    .we-do-serv-block{width: 46%;
+        .we-do-serv-info{padding: 20px 0; width: 100%;
+            .we-do-serv-text > *{width: 100%;padding: 0;margin-bottom: 6%; line-height: 29px}
+            ul{padding: 1%;margin-top: 0;}
+            ol{padding: 1%;margin-top: 100px;}
+        }
+        &.we-do-serv-list{padding:0 0 0 20px;}
+    }
+}
+
+
+@media screen and (max-width:666px){
+    .we-do-serv-content{flex-flow: column nowrap;margin-top: 10px;
+        .we-do-serv-block{width: 100%;
+            .we-do-serv-info{
+                ul,ol{padding: 0;}
+                ol{margin-top: 60px;}
+            }
+        }
+    }
+}

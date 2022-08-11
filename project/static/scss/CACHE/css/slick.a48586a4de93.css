@@ -1,0 +1,215 @@
+/* Slider */
+/* line 3, project/static/styles/slick.scss */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent; }
+
+/* line 17, project/static/styles/slick.scss */
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0; }
+  /* line 24, project/static/styles/slick.scss */
+  .slick-list:focus {
+    outline: none; }
+  /* line 28, project/static/styles/slick.scss */
+  .slick-list.dragging {
+    cursor: pointer;
+    cursor: hand; }
+
+/* line 33, project/static/styles/slick.scss */
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+/* line 42, project/static/styles/slick.scss */
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block; }
+  /* line 48, project/static/styles/slick.scss */
+  .slick-track:before, .slick-track:after {
+    content: "";
+    display: table; }
+  /* line 54, project/static/styles/slick.scss */
+  .slick-track:after {
+    clear: both; }
+  /* line 58, project/static/styles/slick.scss */
+  .slick-loading .slick-track {
+    visibility: hidden; }
+
+/* line 62, project/static/styles/slick.scss */
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none; }
+  /* line 66, project/static/styles/slick.scss */
+  [dir="rtl"] .slick-slide {
+    float: right; }
+  /* line 69, project/static/styles/slick.scss */
+  .slick-slide img {
+    display: block; }
+  /* line 72, project/static/styles/slick.scss */
+  .slick-slide.slick-loading img {
+    display: none; }
+  /* line 78, project/static/styles/slick.scss */
+  .slick-slide.dragging img {
+    pointer-events: none; }
+  /* line 82, project/static/styles/slick.scss */
+  .slick-initialized .slick-slide {
+    display: block; }
+  /* line 86, project/static/styles/slick.scss */
+  .slick-loading .slick-slide {
+    visibility: hidden; }
+  /* line 90, project/static/styles/slick.scss */
+  .slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent; }
+
+/* line 96, project/static/styles/slick.scss */
+.slick-arrow.slick-hidden {
+  display: none; }
+
+/* Slider */
+/* Arrows */
+/* line 120, project/static/styles/slick.scss */
+.slick-prev,
+.slick-next {
+  position: absolute;
+  display: block;
+  height: 20px;
+  width: 20px;
+  line-height: 0px;
+  font-size: 0px;
+  cursor: pointer;
+  background: transparent;
+  color: transparent;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  padding: 0;
+  border: none;
+  outline: none; }
+  /* line 138, project/static/styles/slick.scss */
+  .slick-prev:hover, .slick-prev:focus,
+  .slick-next:hover,
+  .slick-next:focus {
+    outline: none;
+    background: transparent;
+    color: transparent; }
+    /* line 142, project/static/styles/slick.scss */
+    .slick-prev:hover:before, .slick-prev:focus:before,
+    .slick-next:hover:before,
+    .slick-next:focus:before {
+      opacity: 1; }
+  /* line 146, project/static/styles/slick.scss */
+  .slick-prev.slick-disabled:before,
+  .slick-next.slick-disabled:before {
+    opacity: 0.25; }
+  /* line 149, project/static/styles/slick.scss */
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 20px;
+    line-height: 1;
+    color: white;
+    opacity: 0.75;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+
+/* line 159, project/static/styles/slick.scss */
+.slick-prev {
+  left: -25px; }
+  /* line 161, project/static/styles/slick.scss */
+  [dir="rtl"] .slick-prev {
+    left: auto;
+    right: -25px; }
+
+/* line 168, project/static/styles/slick.scss */
+.slick-next {
+  right: -25px; }
+  /* line 170, project/static/styles/slick.scss */
+  [dir="rtl"] .slick-next {
+    left: -25px;
+    right: auto; }
+
+/* Dots */
+/* line 179, project/static/styles/slick.scss */
+.slick-dotted.slick-slider {
+  margin-bottom: 30px; }
+
+/* line 183, project/static/styles/slick.scss */
+.slick-dots {
+  position: absolute;
+  bottom: -25px;
+  list-style: none;
+  display: block;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  width: 100%; }
+  /* line 192, project/static/styles/slick.scss */
+  .slick-dots li {
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer; }
+    /* line 200, project/static/styles/slick.scss */
+    .slick-dots li button {
+      border: 0;
+      background: transparent;
+      display: block;
+      height: 20px;
+      width: 20px;
+      outline: none;
+      line-height: 0px;
+      font-size: 0px;
+      color: transparent;
+      padding: 5px;
+      cursor: pointer; }
+      /* line 212, project/static/styles/slick.scss */
+      .slick-dots li button:hover, .slick-dots li button:focus {
+        outline: none; }
+        /* line 214, project/static/styles/slick.scss */
+        .slick-dots li button:hover:before, .slick-dots li button:focus:before {
+          opacity: 1; }
+      /* line 218, project/static/styles/slick.scss */
+      .slick-dots li button:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        font-size: 6px;
+        line-height: 20px;
+        text-align: center;
+        color: black;
+        opacity: 0.25;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale; }
+    /* line 233, project/static/styles/slick.scss */
+    .slick-dots li.slick-active button:before {
+      color: black;
+      opacity: 0.75; }

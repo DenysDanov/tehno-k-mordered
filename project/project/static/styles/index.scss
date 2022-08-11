@@ -1,0 +1,46 @@
+@import './normalize.scss';
+@import './basic.scss';
+
+// Common
+@import './common/header.scss';
+@import './common/footer.scss';
+@import './common/buttons.scss';
+@import './common/popup.scss';
+@import './common/hidden-block.scss';
+@import './common/seo-section.scss';
+@import './common/top-content.scss';
+@import './common/form-section.scss';
+
+//index page
+@import './index/top-section.scss';
+@import './index/about-company-in-numbers-section.scss';
+@import './index/services-and-solutions-section.scss';
+@import './index/loans-for-any-purpose-section.scss';
+@import './index/about-us.scss';
+@import './index/customers-section.scss';
+
+//news page
+@import './news/news-section.scss';
+@import './news/news-pagination-section.scss';
+
+//services page
+@import './services/all-services-section.scss';
+
+//news-post page
+@import './news-post/news-bg-section.scss';
+@import './news-post/news-content-section.scss';
+@import './news-post/news-important-section.scss';
+
+//contacts page
+@import './contacts/contact-section.scss';
+
+//about-company-page
+@import './about-company/about-top-section.scss';
+@import './about-company/about-bg-section.scss';
+@import './about-company/what-we-do.scss';
+
+//specific-service
+@import './specific-service/tabs-section.scss';
+@import './specific-service/important-section.scss';
+@import './specific-service/how-work-section.scss';
+@import './specific-service/we-do-section.scss';

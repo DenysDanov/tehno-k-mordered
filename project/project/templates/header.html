@@ -1,0 +1,58 @@
+<!-- HEADER -->
+{% load static %}
+<header class="header">
+  <div class="header-l-menu">
+    <a class="logo" href="{% url 'main:index' %}">
+        <img src="{% static 'images/logo.png' %}" width="123" height="21" />
+    </a>
+    <div class="l-menu">
+      <a href="{% url 'main:about' %}">О компании</a>
+      <a href="javascript: void(0)" class="services">Услуги<span></span></a>
+      <a href="{% url 'news:index' %}">Новости</a>
+      <a href="{% url 'main:contacts' %}">Контакты</a>
+    </div>
+    <div class="l-menu-subitems">
+      <a href="callto:{{ preferences.MyPreferences.contact_phone }}" class="l-menu-tel">{{ preferences.MyPreferences.contact_phone }} <span>Заказать звонок</span></a>
+      <p class="l-menu-address">
+        <b>Офис в Москве:</b><br/>{{ preferences.MyPreferences.contact_address }}
+      </p>
+    </div>
+  </div>
+  <div class="header-l-menu-mobile">
+    <a class="logo" href="/">
+        <img src="{% static 'images/logo.png' %}" width="123" height="21" />
+    </a>
+    <a href="javascript: void(0)" class="l-menu-open-btn"></a>
+    <div class="l-menu-mobile">
+      <div class="l-menu">
+        <a href="{% url 'main:about' %}">О компании</a>
+        <a href="javascript: void(0)" class="services">Услуги<span></span></a>
+        <a href="{% url 'news:index' %}">Новости</a>
+        <a href="{% url 'main:contacts' %}">Контакты</a>
+      </div>
+      <div class="l-menu-subitems">
+        <a href="callto:{{ preferences.MyPreferences.contact_phone }}" class="l-menu-tel">{{ preferences.MyPreferences.contact_phone }}<br/> <span>Заказать звонок</span></a>
+        <p class="l-menu-address">
+          <b>Офис в Москве:</b><br/>{{ preferences.MyPreferences.contact_address }}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="header-services">
+    <div class="close">Закрыть</div>
+    <div class="header-services-content">
+      
+      {% for category in categories %}
+      <ul>
+        <li class="services-content-title"><a href="{% url 'services:index' %}">{{ category.name }}</a></li>
+        {% for service in category.services.all %}
+        <li><a href="{% url 'services:detail' service.slug %}">{{ service.name }}</a></li>
+        {% endfor %}
+      </ul>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="mobile-bg"></div>
+</header>
+<!-- /HEADER -->
+

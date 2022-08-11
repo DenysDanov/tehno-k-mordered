@@ -1,0 +1,88 @@
+<div class="hidden-block">
+
+    <div id="call_success">
+         <div class="call-success-wrap">
+             <div class="call-success-title">Спасибо за заявку!</div>
+             <div class="call-success-subtitle">Мы свяжемся с Вами в ближайшее время</div>
+         </div>
+    </div>
+
+    <div id="call-popup">
+        <form action="{% url 'callrequest:request' %}" class="contact-form">
+            {% csrf_token %}
+            <div class="contact-form-title">
+                <!-- Title -->
+            </div>
+            <div class="contact-form-row cfix">
+                <div class="contact-form-item">
+                    <div class="contact-form-item-input form_row">
+                        <div class="form_input">
+                            <input type="text" name="contact_name" required="required" value="" placeholder="Ваше Имя">
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-item">
+                    <div class="contact-form-item-input form_row">
+                        <div class="form_input">
+                            <input type="text" name="contact_tel" value="" required="required" placeholder="Ваш номер" class="tel-mask">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form-row cfix">
+                <div class="contact-form-item">
+                    <button type="submit" class="contact-submit">
+                        <span><!-- Отправить заявку  --></span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="request-block" id="requestPopup">
+            <div class="form-title title">
+                <h4>Давайте обсудим Ваш проект!</h4>
+            </div>
+            <div class="form-text text">
+                <p>Расскажем как сделать Ваш кредит выгоднее!</p>
+            </div>
+            <form class="form popup-form" action="{% url 'callrequest:request' %}">
+                {% csrf_token %}
+                <div class="input-hidden">
+                    <input type="text" name='service-name' style="visibility: hidden; position: absolute;" value="" class=''>
+                </div>
+                 <div class="input-hidden">
+                    <input type="text" name='category-name' style="visibility: hidden; position: absolute;" value="">
+                </div>
+               <div class="form-inputs">
+                    <div class="form-row form_input">
+                        <input type="text" name="name" placeholder="Введите имя" required class='disable-margin'>
+                    </div>
+                    <div class="form-row form_input">
+                        <input type="tel" class="tel tel-mask" placeholder="Телефон" name="ph" required data-rule-minlength="10" data-msg="Телефон">
+                    </div>
+                    <div class="form-info text">
+                        <span>Лучше напишите в Telegram \ Viber</span>
+                    </div>
+                    <div class="activity">
+                        <select name="activity" >
+                            <option value="">Сфера деятельности</option>
+                            <option value="Название 1">Название 1</option>
+                            <option value="Название 2">Название 2</option>
+                            <option value="Название 3">Название 3</option>
+                            <option value="Название 4">Название 4</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-textarea">
+                    <textarea name="request-textarea" cols="30" rows="10" placeholder="Расскажите кратко о сути проекта"></textarea>
+                </div>
+                <div class="form-bottom">
+                    <button type="submit" class="button yellow">Отправить</button>
+                    <div class="form-text text">
+                        <p>Отправляя форму, Вы соглашаетесь на политику обработки персональных данных</p>
+                    </div>
+                </div>
+            </form>
+    </div>
+</div>

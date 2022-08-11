@@ -1,0 +1,47 @@
+{% load static %}
+<div class="news-content-section section sub-section ctext">
+    <div class="wrapper">
+        <div class="news-container">
+            <div class="news-content">
+                <div class="news-date text"><span>Опубликовано 03.02.2019, 14:02</span></div>
+                <div class="news-title section-title sub-section-title title">
+                    <h1>{{ object.title }}</h1>
+                </div>
+                <div class="post-text">
+                    <p>
+                        {% autoescape off %}
+                        {{ object.introduction }}
+                        {% endautoescape %}</p>
+                    {% for subtitle in object.subtitles.all %}
+                    <div class="post-label">
+                        <object type="image/svg+xml" data="{% static 'images/post-label-img.svg' %}" width="30" height="25">
+                            <img src="{% static 'images/post-label-img.png' %} " width="30" height="25" />
+                        </object>
+                        <div class="text">
+                            {% autoescape off %}
+                            {{ subtitle.subtitle }}
+                            {% endautoescape %}
+                        </div>
+                    </div>
+                    {% autoescape off %}
+                    {{ subtitle.text }}
+                    {% endautoescape %}
+
+                    {% endfor %}
+                </div>
+            </div>
+            <!--   If delete last-post block you must add full-w class in news-content and wrapper  -->
+            <div class="last-posts">
+                <div class="section-title sub-section-title title">
+                    <h2>Последние публикации</h2>
+                </div>
+                <ul>
+                    {% for last_post in last_posts %}
+                    <li><a href="{% url 'news:news-post' last_post.slug %}">{{ last_post.title}}</a></li>
+                    {% endfor %}
+                
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

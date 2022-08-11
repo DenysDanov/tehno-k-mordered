@@ -1,0 +1,18 @@
+<div class="top-content-section section">
+    <div class="wrapper">
+        <div class="top-content">
+            <div class="nav-chain">
+                {% for unit in top_section_units %}
+                <a href="{{unit.url}}"> {{unit.name}} </a>
+                {% endfor %}
+            </div>
+            <div class="top-menu">
+                <div class="menu">
+                    {% for category in categories|slice:":3" %}
+                    <a href="{% url 'services:index' %}">{{ category.name }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

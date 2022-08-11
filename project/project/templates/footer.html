@@ -1,0 +1,78 @@
+<!-- FOOTER -->
+{% load static %}
+<footer class="footer">
+  <div class="wrapper">
+    <div class="footer-top">
+      <div class="footer-menu">
+        {% for category in categories %}
+        <ul class="footer-menu-category">
+          <li><h4 class="title">{{ category.title}}</h4></li>
+          {% for service in category.services.all %}
+          <li><a href="">{{ service.name }}</a></li>
+          {% endfor %}
+        </ul>
+        {% endfor %}
+        <ul class="footer-menu-navigation">
+          <li><a href="{% url 'main:index' %}">Главная</a></li>
+          <li><a href="{% url 'main:about' %}">О компании</a></li>
+          <li><a href="{% url 'services:index' %}">Услуги</a></li>
+          <li><a href="{% url 'news:index' %}">Новости</a></li>
+          <li><a href="{% url 'main:contacts' %}">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <a class="logo" href="/">
+            <img src="{% static 'images/logo-footer.png' %}" width="123" height="21" />
+        </a>
+        <div class="footer-social-content">
+          <a class="social social-vk" href="{{ preferences.MyPreferences.social_vk }}" target="_blank"></a>
+					<a class="social social-inst" href="{{ preferences.MyPreferences.social_ig }}" target="_blank"></a>
+					<a class="social social-fb" href="{{ preferences.MyPreferences.social_fb }}" target="_blank"></a>
+					</div>
+				</div>
+			</div>
+  </div>
+  <div class="footer-bottom-section">
+    <div class="wrapper footer-wrapper-bot">
+      <div class="footer-bottom">
+        <div class="text"><p>Tehno.K <span class="currentDate">2018</span> (c)</p></div>
+        <a href="">Политика конфиденциальности</a>
+        <a href="http://sheep.fish" target="_blank" class="company"><span>Разработка и поддержка: SheepFish</span></a>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+<footer class="footer-mobile">
+  <div class="wrapper">
+    <div class="footer-top">
+      <div class="footer-menu">
+        <a class="logo" href="/">
+            <img src="{% static 'images/logo-footer.png' %}" width="123" height="21" />
+        </a>
+        <ul class="footer-menu-navigation">
+          <li><a href="">Главная</a></li>
+          <li><a href="">О компании</a></li>
+          <li><a href="">Услуги</a></li>
+          <li><a href="">Новости</a></li>
+          <li><a href="">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <div class="text"><p>Tehno.K <span class="currentDate">2018</span> (c)</p></div>
+        <div class="footer-social-content">
+          <a class="social social-vk" href="/" target="_blank"></a>
+          <a class="social social-inst" href="/" target="_blank"></a>
+          <a class="social social-fb" href="/" target="_blank"></a>
+          </div>
+        </div>
+      </div>
+    <div class="footer-bottom">
+      <a href="">Политика конфиденциальности</a>
+      <a href="http://sheep.fish" target="_blank"><span>Разработка и поддержка: SheepFish</span></a>
+    </div>
+  </div>
+</footer>
+	<!-- /FOOTER -->
+

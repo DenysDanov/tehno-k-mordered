@@ -1,0 +1,35 @@
+<div class="tabs-section section ctext">
+    <div class="wrapper">
+        <div class="section-title sub-section-title title " id="serviceName">
+            <h2>{{ object.name }}</h2>
+        </div>
+            <p>{{ object.descr}}</p>
+        <div class="tabs-menu">
+            {% for tab in object.tabs.all %}
+            <div class="tabs-block {% if forloop.first %}active{% endif %}" data-tabs="{{ forloop.counter }}">
+                <div class="tabs-img">
+                    <img src="{{ MEDIA_URL }}{{tab.image}}" width="30" height="30" />
+                </div>
+                <div class="tabs-title title">
+                    <h5>{{ tab.title }}</h5>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="tabs-content">
+            {% for tab in object.tabs.all %}
+            
+            <div class="tab {% if forloop.first %}active{% endif %}" id="tab-{{ forloop.counter }}">
+                
+            
+                <p>{{ tab.col_1}}</p>
+                <p>{{ tab.col_2 }}</p>
+                <p>{{ tab.col_3 }}</p>
+                <p>{{ tab.col_4 }}</p>
+                </div>
+            
+            {% endfor %}
+        </div>
+        <a href="#requestPopup" class="button red modal-open" id="openForm" data-name="Text">Заказать услугу</a>
+    </div>
+</div>

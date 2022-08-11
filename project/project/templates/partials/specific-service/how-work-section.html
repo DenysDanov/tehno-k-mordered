@@ -1,0 +1,35 @@
+{# Переменная object — объект модели Service #}
+{% load static %}
+<div class="how-work-section section ctext">
+    <div class="wrapper">
+        <div class="section-title sub-section-title title">
+            <h2>как работает</h2>
+        </div>
+        <div class="how-work-blocks">
+            <div class="how-work-block">
+                <div class="how-work-img">
+                    <object type="image/svg+xml" data="{% static 'images/info.svg' %}" width="54" height="54">
+                        <img src="{% static 'images/info.png' %}" width="54" height="54" />
+                    </object>
+                </div>
+                    <p>{{object.how_it_works.text_block }}</p>
+            </div>
+            <div class="how-work-block yellow-block">
+                <div class="how-work-img">
+                    <object type="image/svg+xml" data="{% static 'images/info.svg' %}" width="54" height="54">
+                        <img src="{% static 'images/info.png' %}" width="54" height="54" />
+                    </object>
+                </div>
+                    <p>{{object.how_it_works.text_yellow_block }}</p>
+            </div>
+            <div class="how-work-block how-work-video">
+                <div class="video">
+                    <iframe width="560" height="315" src="{{ object.how_it_works.youtube_video_link }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="how-work-block big-block">
+                    <p>{{object.how_it_works.text_big_block }}</p>
+            </div>
+        </div>
+    </div>
+</div>

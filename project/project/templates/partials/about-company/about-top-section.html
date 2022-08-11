@@ -1,0 +1,103 @@
+{% load static %}
+<div class="about-company-section section sub-section ctext">
+    <div class="wrapper">
+        <div class="title big-title section-title sub-section-title">
+            <h2>О компании</h2>
+        </div>
+        <div class="about-top-content">
+            <div class="about-content">
+                <div class="text">
+                    <p><b>Днем рождения компании считается 22 января 2000 года. Дата, когда была основана первая фирма, входящая в состав корпорации, – аудиторская фирма «Техно Аудит».</b></p>
+                </div>
+                <div class="content-blocks mini-blocks-content">
+                    <div class="about-block mini-block">
+                        <div class="about-img mini-block-img">
+                            <object type="image/svg+xml" data="images/strategy.svg" width="96" height="31">
+                                <img src="{% static 'images/strategy.png' %}" width="59" height="59" />
+                            </object>
+                        </div>
+                        <div class="about-info mini-block-info">
+                            <div class="about-title title mini-block-title">
+                                <h3>142 успешных проекта</h3>
+                            </div>
+                            <div class="about-text text mini-block-text">
+                                <p>Не большое описание доля каких компаний делали или что-то такое</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-block mini-block">
+                        <div class="about-img mini-block-img">
+                            <object type="image/svg+xml" data="images/give.svg" width="96" height="31">
+                                <img src="{% static 'images/give.png' %}" width="59" height="59" />
+                            </object>
+                        </div>
+                        <div class="about-info mini-block-info">
+                            <div class="about-title title mini-block-title">
+                                <h3>74 довольных клиента</h3>
+                            </div>
+                            <div class="about-text text mini-block-text">
+                                <p>Не большое описание доля каких компаний делали или что-то такое</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-block mini-block">
+                        <div class="about-img mini-block-img">
+                            <object type="image/svg+xml" data="images/new-year.svg" width="96" height="31">
+                            <img src="{% static 'images/new-year.png' %}" width="59" height="59" />
+                            </object>
+                        </div>
+                        <div class="about-info mini-block-info">
+                            <div class="about-title title mini-block-title">
+                                <h3>7 лет на рынке</h3>
+                            </div>
+                            <div class="about-text text mini-block-text">
+                                <p>Не большое описание доля каких компаний делали или что-то такое</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-block mini-block">
+                        <div class="about-img mini-block-img">
+                            <object type="image/svg+xml" data="images/team.svg" width="96" height="31">
+                                <img src="{% static 'images/team.png' %}" width="59" height="59" />
+                            </object>
+                        </div>
+                        <div class="about-info mini-block-info">
+                            <div class="about-title title mini-block-title">
+                            <h3>42 человека в команде</h3>
+                            </div>
+                            <div class="about-text text mini-block-text">
+                            <p>Не большое описание доля каких компаний делали или что-то такое</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-form-block">
+                <div class="form-title title">
+                    <h5>Оставьте Ваши контакты</h5>
+                </div>
+                <div class="form-text text">
+                    <p>Расскажем как сделать Ваш кредит выгоднее!</p>
+                </div>
+                <form action="{% url 'callrequest:request' %}" class="request-form about-form form">
+                    {% csrf_token %}
+                    <div class="form-inputs">
+                      <div class="form-row form_input">
+                          <input type="text" name="name" placeholder="Введите имя" required>
+                      </div>
+                      <div class="form-row form_input">
+                          <input type="tel" class="tel tel-mask " placeholder="Телефон" name="ph" required data-rule-required="true" data-rule-minlength="10" data-msg="Телефон">
+                      </div>
+                      <button type="submit" class="button yellow">Заказать услугу</button>
+                    </div>
+                    <div class="form-text text">
+                      <p>Отправляя форму, Вы соглашаетесь на политику обработки персональных данных</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="text">
+            <p><b>Аудит финансовой отчетности</b> проводится в полном соответствии с международными стандартами аудита (МСА), которые признаны в Украине в качестве национальных стандартов. Также в Украине аудиторы обязаны соблюдать требования Международного Кодекса этики профессиональных бухгалтеров (аудиторов). Полном соответствии с международными стандартами аудита (МСА), которые признаны в Украине в качестве национальных стандартов. Также в Украине аудиторы обязаны соблюдать требования Международного Кодекса этики профессиональных бухгалтеров (аудиторов). Полном соответствии с международными стандартами аудита (МСА), которые признаны в Украине в качестве национальных стандартов. Также в Украине аудиторы обязаны соблюдать требования Международного Кодекса этики профессиональных бухгалтеров (аудиторов).</p>
+        </div>
+    </div>
+</div>
