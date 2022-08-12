@@ -5,17 +5,9 @@ from re import search
 
 from django.urls import reverse
 
-from services.models import Service, ServiceCategory
+from .models import Service, ServiceCategory
 
-
-def extra_context(request: HttpRequest) -> dict:
-    context = {}
-    context['services'] = Service.objects.all()
-    context['categories'] = ServiceCategory.objects.all()
-    context['top_section_units'] = __decode_path(request)
-    return context
-
-def __decode_path(request: HttpRequest) -> list:
+def decode_path(request: HttpRequest) -> list:
     path = request.path_info
     decoder = {
         r'^\/' : {'name': 'Главная', 'url': reverse('main:index')},
@@ -28,3 +20,13 @@ def __decode_path(request: HttpRequest) -> list:
     }
     return [v for k,v in decoder.items() if search(k, path)]
     
+
+
+class ExtraContext:
+    
+    def get_context_data(self,**kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context['services'] = Service.objects.all()
+        context['categories'] = ServiceCategory.objects.all()
+        context['top_section_units'] = decode_path(self.request)
+        return context

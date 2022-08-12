@@ -72,7 +72,7 @@ TEMPLATES = [
                 'django.template.context_processors.media',
                 'preferences.context_processors.preferences_cp',
                 # custom 
-                'project.contetext_processors.extra_context'
+                'project.context_processors.extra_context'
                 
             ],
         },
