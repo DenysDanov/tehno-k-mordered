@@ -2,18 +2,17 @@ from django.views.generic import *
 from django.views import *
 
 
-from services.custom_view import ExtraContext
 from .models import *
 from .custom import get_safe_slice
 
-class NewsPage(ExtraContext, ListView):
+class NewsPage(ListView):
     template_name = 'pages/news.html'
     paginate_by = 9
     model = NewsArticle
     queryset = model.get_published()
 
 
-class NewsDetail(ExtraContext, DetailView):
+class NewsDetail(DetailView):
     template_name = 'pages/news-post.html'
     model = NewsArticle
     
