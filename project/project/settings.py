@@ -36,6 +36,9 @@ INSTALLED_APPS = [
     #additional
     "compressor",
     "preferences",
+    "rest_framework",
+    "corsheaders",
+
     #local
     'main.apps.MainConfig',
     'services.apps.ServicesConfig',
@@ -45,6 +48,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
+
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -123,6 +128,11 @@ USE_I18N = True
 
 USE_TZ = True
 
+CORS_ORIGIN_ALLOW_ALL = True
+
+#CORS_ORIGIN_WHITELIST = (
+#       'localhost:3000',
+#)
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 STATIC_ROOT = '/var/www/static/'

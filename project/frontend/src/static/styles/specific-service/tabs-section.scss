@@ -1,0 +1,68 @@
+@import '../variables.scss';
+
+.tabs-section{padding: 0 0 70px 0;
+    .wrapper{
+        & > p{margin: 0 0 20px 0;}
+    }
+}
+
+.tabs-menu{display: flex;flex-flow:row nowrap;justify-content: flex-start; align-items: centerl;
+    .tabs-block{display: flex; flex-flow: row nowrap; justify-content: space-between; align-items:center;width: auto;padding: 10px;height:71px;border: 1px solid $white;cursor:pointer;
+        &.active{border:1px solid $grey; border-bottom:0;position: relative; top:1px;background:$white;
+            .tabs-img{
+                background: $yellow; position: relative; bottom: 1px;
+                img{ -webkit-filter: contrast(1000%) invert(100%) sepia(100%) saturate(10000%) hue-rotate(90deg); filter: contrast(1000%) invert(100%) sepia(100%) saturate(10000%) hue-rotate(90deg);}
+            }
+            .tabs-title{position: relative; bottom: 1px;}
+        }
+        .tabs-img{background: $grey;display: inline-block;width: 50px;height: 50px;position: relative;
+            img{position: absolute; top:50%;left: 50%;transform: translate(-50%,-50%)}
+        }
+        .tabs-title{margin-left: 10px;
+            & > *{font-size: 16px;line-height: 21px;margin: 0; text-transform:none;}
+        }
+    }
+}
+
+.tabs-content{padding-bottom: 40px;
+
+    .tab{display: none;border:1px solid $grey; -webkit-columns: 4 150px; -moz-columns: 4 150px;columns: 4 150px;-webkit-column-gap: 48px;-moz-column-gap: 48px;column-gap: 48px; padding: 40px 10px 20px 10px;
+        &.active{display: block}
+        p{padding: 10px 0;margin: 0;}
+    }
+
+}
+
+@media screen and (max-width: 992px){
+    .tabs-menu{flex-flow: column nowrap;
+        .tabs-block{border:1px solid $grey;margin-bottom: 20px;
+            &.active{border:none;top: 0;
+                background:$yellow;
+            }
+            .tabs-img{display: none;}
+        }
+    }
+    .tabs-content{
+        .tab{-webkit-columns: 3 150px; -moz-columns: 3 150px;columns: 3 150px;}
+    }
+}
+
+@media screen and (max-width:782px){
+     .tabs-content{padding-bottom: 20px;
+        .tab{-webkit-columns: 2 150px; -moz-columns: 2 150px;columns: 2 150px;}
+    }
+}
+
+@media screen and (max-width:666px){
+    .tabs-section{padding: 0 0 35px 0;
+        a.button{margin: 0 auto; display: block;}
+    }
+
+    .tabs-menu{
+        .tabs-block{justify-content: center}
+    }
+    .tabs-content{padding-bottom: 20px;
+        .tab{-webkit-columns: 1 150px; -moz-columns: 1 150px;columns: 1 150px;}
+    }
+
+}

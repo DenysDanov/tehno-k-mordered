@@ -1,0 +1,78 @@
+@import './../variables.scss';
+
+.services-section{
+    .service{background:$dark-white;
+        &:not(:last-of-type){margin-bottom:40px;}
+    }
+}
+
+.all-services{
+    .services-type{display: flex; flex-flow: row nowrap; align-items: center; justify-content: space-between; background:$dark-white;padding:20px 0;
+        .top-info{width:80%}
+        .button{margin-left:20px;}
+        }
+    .type-items{display: flex; flex-flow: row wrap; justify-content: flex-start; background:$dark-white; padding: 0 0 20px 0; margin: 0 -15px 0 -15px;
+        .type-item{max-width:calc(25% - 30px); background: $white;box-shadow: 5px 0px 30px rgba(0, 0, 0, 0.1);display: flex; flex-flow: column nowrap; justify-content: space-between;margin: 0 15px 20px 15px;
+            .item-image{height: 16vw;
+                img{width: 100%; height: 100%;object-fit: cover;}
+            }
+            .item-content{padding: 20px 20px 0 20px; display: flex; flex-flow: column nowrap;height: 50%;
+                .item-title > *{margin:0; padding-top:10px}
+                .item-text > *{margin:0; padding: 20px 0 40px 0}
+            }
+            .item-links{display: flex; flex-flow: row nowrap; justify-content: space-between; align-items: center; padding: 0 20px 20px 20px;
+                .button{width:155px; padding:13px 22px;}
+                .read-all{display: block; text-align:center; margin-left:10px;}
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1724px){
+    .services-section{
+        .services-wrapper{background:$dark-white}
+    }
+}
+
+@media screen and (max-width: 1280px){
+    .all-services{
+        .type-items{
+            .type-item{max-width:calc(((100%) / 3) - 30px)}
+        }
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .services-section{padding-bottom:0;}
+    .all-services{
+            .services-type{
+                .top-info{
+                    .type-info-title > *{font-size: 20px;}
+                }
+            }
+        .type-items{
+            .type-item{max-width:calc(50% - 30px);
+                .item-image{height: 30vw;}
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 666px){
+    .services-section{
+        .service{
+            &:not(:last-of-type){margin-bottom:0}
+        }
+    }
+
+    .all-services{
+        .services-type{flex-flow: column nowrap; align-items: center; padding-top: 0;
+            .top-info{width:100%; text-align:center}
+        }
+        .type-items{padding-bottom: 0;
+            .type-item{max-width:100%; margin:0 15px 20px 15px;
+                 .item-image{height: 70vw;}
+            }
+        }
+    }
+}

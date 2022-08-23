@@ -1,0 +1,328 @@
+@import './variables.scss';
+
+/* base styles*/
+*,*:before, *:after{box-sizing:border-box;outline:none;}
+*,body,html{-webkit-text-size-adjust: none;-webkit-appearance: none;}
+html{height:100%;}
+ul{list-style:none;padding: 0;}
+body{min-height:100%;width:100%;min-width:320px;font-family:arial,sans-serif;background:#fff;color:#3d3d3d;position:relative;font-size: 16px;line-height: 1;font-family: Futura PT;}
+img{vertical-align:bottom;border:0;max-width:100%;}
+a{text-decoration: none; font-family: Futura PT; &:hover{text-decoration: underline}}
+p{font-size: 16px; line-height: 31px; font-weight: 300;}
+input,select,textarea{background: $white;border: none;border-radius: 2px;padding: 20px 12px;width: 100%;max-width: 250px;margin-right: 2%;
+  &.error{border-bottom: 2px solid red !important; color:red;
+    &::placeholder{color: red}
+  }
+  @media screen and (max-width:767px){font-size: 14px;}
+  @media screen and (max-width:666px){&::placeholder{text-align: center;}}
+}
+textarea{background: $white;border: none;border-radius: 2px;padding: 20px 12px;width: 30%;max-width: 250px;}
+
+path{
+  fill:none;
+  stroke:black;
+  pointer-events:all;
+}
+
+/* helping adds*/
+.clear{clear:both;font-size:1px;line-height:1px;height:0;overflow:hidden;}
+.cfix:after{content: '';display: block;height: 0;font-size: 1px;line-height: 1px;overflow: hidden;clear: both;}
+.hidden-block{position:absolute;left:-99999em;top:-99999em;}
+
+/* /helping adds*/
+
+/* wraps styling*/
+
+.mbox{max-width:1024px;width:100%;margin:0 auto;position:relative;z-index:1;}
+.mbox:after{content:"";clear:both;font-size:1px;line-height:1px;height:0;overflow:hidden;display:block;}
+
+/* /wraps styling*/
+
+.footer_placeholder{height: 200px;}
+.footer{width:89%;margin-left: 11%;z-index:2;overflow:hidden;}
+
+input, textarea{
+    &::-webkit-input-placeholder {color:#212121;}
+    &:-moz-placeholder {color:#212121;opacity:1;}
+    &::-moz-placeholder {color:#212121;opacity:1;}
+    &:-ms-input-placeholder {color:#212121;}
+}
+
+/*fonts*/
+
+@mixin font-face($style-name, $file:$style-name, $weight:normal, $style:normal) {
+    $filepath: "http:localhost:8000//static/fonts/" + $file;
+    @font-face {
+        font-family: quote($style-name);
+        src: url($filepath + ".eot");
+        src: url($filepath + ".eot?#iefix") format('embedded-opentype'),
+        url($filepath + ".woff") format('woff'),
+        url($filepath + ".ttf")  format('truetype'),
+        url($filepath + ".svg#" + $style-name + "") format('svg');
+        font-weight: $weight;
+        font-style: $style;
+    }
+}
+
+@include font-face('Futura PT', 'FuturaPTDemi', 300, normal);
+@include font-face('Futura PT', 'FuturaPTMedium', 500, normal);
+@include font-face('Futura PT', 'FuturaPTBook', normal, normal);
+@include font-face('Futura PT', 'FuturaPTBold', 800, normal);
+/* /fonts*/
+
+
+
+/* /base styles*/
+
+.main{
+    &>.slick-arrow{display: none !important}
+    &>.slick-dots{display: none !important}
+}
+
+.wrapper{max-width: 1530px;margin: 0 auto;padding: 0 15px}
+
+.section{width: 89%;position: relative;margin-left: 11%; padding: 40px 0;
+  @media screen and (max-width: 1280px){width: 86%;margin-left: 14%}
+  @media screen and (max-width: 1024px){margin-left: 0;width: 100%}
+  /*not main page sections*/
+  &.sub-section{padding-top:0; margin-top:40px;
+    @media screen and (max-width: 666px){margin-top:20px;}
+  }
+  /* /*not main page sections*/
+  .section-title{padding:0 0 40px 0;
+    & > *{line-height: 46px;text-align: center;color: $black;margin: 80px 0 40px 0; font-weight: 300;margin: 0;
+        @media screen and (max-width:1280px){line-height: 30px}
+        @media screen and (max-width: 666px){line-height:22px;}
+    }
+  }
+  .sub-section-title{
+    & > *{text-align:left; padding: 0}
+    @media screen and (max-width: 666px){
+      &{padding-bottom:20px;}
+      & > * {text-align:center; padding:0;}
+    }
+  }
+  .big-title{
+    & > *{font-size:64px; line-height: 72px; padding: 0; margin: 0}
+    @media screen and (max-width:666px){
+        & > *{font-size:50px;line-height: 50px;}
+    }
+    @media screen and (max-width: 435px){
+        & > *{font-size:40px;line-height: 40px;}
+    }
+  }
+}
+
+/*title wrapp*/
+.title{
+    & > *{font-weight: 300;text-transform: uppercase};
+    & > h1{font-size:55px;
+        @media screen and (max-width: 1280px){font-size: 45px}
+        @media screen and (max-width: 767px){font-size: 42px}
+        @media screen and (max-width: 666px){font-size: 40px}
+        @media screen and (max-width: 435px){font-size: 29.1px}
+    }
+    & > h2{font-size: 34px;
+        @media screen and (max-width: 1280px){font-size: 30px;}
+        @media screen and (max-width: 1024px){font-size: 25px;}
+        @media screen and (max-width:666px){font-size: 22px;}
+    }
+    & > h3{font-size: 25px;
+        @media screen and (max-width: 1024px){font-size: 14px}
+    }
+    & > h4{font-size: 20px}
+    & > h5{font-size: 17px;
+        @media screen and (max-width: 1280px){font-size: 16px}
+    }
+}
+/* /*title wrapp*/
+
+/*text wrapp*/
+.text > *{font-size: 16px;line-height: 22px;font-weight: normal;
+    @media screen and (max-width: 1280px){font-size: 14px; line-height: 24px}
+}
+/* /*text wrapp*/
+
+/*slider*/
+.slick-slider{
+     &.slick-initialized {visibility: visible;opacity: 1;}
+    &.slick-dotted{margin: 0}
+        .slick-prev, .slick-next{background: $yellow;top: 2.5%;width: 40px;height: 40px;z-index: 10;transition: all 0.2s ease-in;
+            &:hover{background: $light-red}
+            &:before{display: inline-block;background-position: center;background-repeat: no-repeat;content: '';width: 40px;height: 40px;}
+            &.slick-disabled{background: $light-grey;
+                &:before{opacity: 1}
+            }
+        }
+        .slick-prev {right: 4%;left: auto;
+            &:before{background-image: url("http://localhost:8000/static/images/arrow-prev.png")}
+        }
+        .slick-next {right:0;
+            &:before{background-image: url("http://localhost:8000/static/images/arrow-next.png")}
+        }
+     .slick-dots{bottom: auto;top: 0;z-index: 4;
+        li{
+        button{
+            &:before{font-family: 'slick';font-size: 50px;line-height: 20px;position: absolute;top: 0;left: 0;width: 20px;height: 20px;content: '•';text-align: center;opacity: .5;color: $grey;-webkit-font-smoothing: antialiased;
+            }
+        }
+        }
+        .slick-active{
+            button:before{opacity: 1;color: $yellow}
+        }
+     }
+     @media screen and (max-width: 1280px){
+        .slick-prev, .slick-next{width: 30px;height: 30px;
+            &:before{display: inline-block;transform: scale(0.7);width: 30px;height: 30px}
+        }
+        .slick-prev{right: 4%; margin-right: 5px}
+        .slick-next{right:0}
+        .slick-dots{
+            li{
+                button:before{font-size: 35px}
+            }
+        }
+     }
+
+    @media screen and (max-width: 1024px){
+        .slick-dots{bottom: auto;top: 0.5%;left: 0; text-align: center}
+    }
+     @media screen and (max-width: 767px){
+        .slick-prev{right: 30px; margin-right: 5px}
+        .slick-next{right:0}
+        .slick-dots{
+            li{
+                button:before{font-size: 35px}
+            }
+        }
+     }
+     @media screen and (max-width: 666px){
+        .slick-dots{top: auto; bottom: 0; text-align: center;
+            li{margin:0;
+                button:before{font-size: 20px}
+            }
+        }
+    }
+}
+/* /*slider*/
+
+/*read all button*/
+.read-all > *{
+    color: $black; text-decoration: underline; transition: all 0.1s linear;
+    &:hover{color: $yellow;};
+}
+/* /*read all button*/
+
+/*text for post blocks*/
+.item-text{
+    color: $grey; line-height: 21px;
+}
+/* /*text for post blocks*/
+
+/*form error styles*/
+.errorText{color: red;margin: 0;font-weight: 300;font-size: 11px; width:100%; line-height: 15px; margin: 5px 0;text-align: left;
+
+}
+@media screen and (max-width:666px){
+    .errorText{text-align: center;width: 100%; margin: 0;}
+}
+/* /*form error*/
+
+/*sub-section list ul, ol, li*/
+.sub-section{
+    ul, ol{list-style: none; counter-reset: li; padding-left: 40px; position:relative; font-family: Futura PT}
+    ol, ul{
+        li::before{ color: $yellow;display: inline-block; width: 1em;margin-left: -1em}
+    }
+    ul{
+        li::before{content: "▪";};
+    }
+    ol{
+        li{counter-increment: li;
+            &::before{content: counter(li)'.'; position: relative; left:-6px;}
+        }
+    }
+    li{font-size:16px; line-height: 25px; font-weight: normal;
+        @media screen and (max-width: 1280px){font-size: 14px; line-height: 24px}
+        &:not(:last-child){margin-bottom: 32px;}
+    }
+}
+
+.mini-blocks-content{display: flex;flex-flow: column nowrap;align-items: center;justify-content: space-between;
+  margin:45px 0 45px 50px;
+    .mini-block{height: 100px; width: 100%;margin: 5px 0;display: flex;flex-flow: row nowrap;align-items: center;
+        .mini-block-img{min-width: 100px; height: 100px;background: $dark-brown;display: inline-block;
+            object{width: 50px;height: 50px;position: relative;top: 50%;left: 50%;transform: translate(-50%, -50%)}
+        }
+        .mini-block-info{width: calc(100% - 100px);display: flex; flex-flow: column nowrap;padding: 20px;height: 100%; justify-content: space-between;
+            .mini-block-title>*{display: inline-block;color: $light-red;margin-bottom: 0;margin-top: 5px; font-size: 18px; text-transform:none; line-height: 20px;}
+            .mini-block-text>*{display: inline-block; margin: 0;}
+        }
+    }
+}
+
+@media screen and (max-width: 435px){
+    .mini-blocks-content{
+        .mini-block{flex-flow: column nowrap; height: auto; width:calc(100% - 30px);
+            &:not(:last-child){margin: 0 0 10px 0}
+            .mini-block-img{display: inline-block;min-width: 100%;height: 40vw;
+                 object{width: 60px;height: 60px;position: relative;top: 50%;left: 50%;transform: translate(-50%, -50%)}
+            }
+            .mini-block-info{background-color: $white;width: 100%;display: flex; flex-flow: column nowrap;padding: 5%;height: 100%; justify-content: space-between; text-align: center;
+                 .mini-block-title > *{display: inline-block;color: $light-red;margin-bottom: 0; margin-top: 10px;}
+                 .mini-block-text > *{display: inline-block; margin: 10px 0 0 0;}
+            }
+         }
+     }
+}
+/* /*sub-section list ul, ol, li*/
+
+/* ctext*/
+.ctext{
+    h1, h2, h3, h4, h5, h6{font-weight: 300;text-transform: uppercases}
+    h1{font-size:55px;
+        @media screen and (max-width: 1280px){font-size: 45px}
+        @media screen and (max-width: 767px){font-size: 42px}
+        @media screen and (max-width: 666px){font-size: 40px}
+        @media screen and (max-width: 435px){font-size: 29.1px}
+     }
+     h2{font-size: 34px;
+        @media screen and (max-width: 1280px){font-size: 30px;}
+        @media screen and (max-width: 1024px){font-size: 25px;}
+        @media screen and (max-width:666px){font-size: 22px;}
+     }
+     h3{font-size: 25px;
+        @media screen and (max-width: 1024px){font-size: 14px}
+     }
+     h4{font-size: 20px}
+     h5{font-size: 17px;
+        @media screen and (max-width: 1280px){font-size: 16px}
+     }
+    h6{font-size: 16px;}
+    p{margin-bottom: 10px;font-size: 16px; line-height:21px;font-weight:normal;}
+    @media screen and (max-width: 1280px){p{font-size: 14px; line-height: 24px}}
+}
+
+/* /ctext*/
+
+/* styles for wp-admin panel*/
+body{
+    &.customize-support{
+        .wp-panel-show{top:32px;} //fixed elements (if their has top:0) must has class .wp-panel-show
+    }
+}
+@media screen and (max-width: 782px){
+
+    body{
+        &.customize-support{
+            .wp-panel-show{top:46px;}
+        }
+    }
+
+    #wpadminbar{position: fixed!important;}
+
+}
+ /* /styles for wp-admin panel*/
+
+/*End Layout*/
+

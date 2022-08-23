@@ -36,7 +36,7 @@ class NewsArticle(models.Model):
     
     @classmethod
     def get_published(cls):
-        return cls.objects.filter(is_published=True)
+        return cls.objects.filter(is_published=True).order_by('-publish_date')
     
 
 class NewsSubtitle(models.Model):

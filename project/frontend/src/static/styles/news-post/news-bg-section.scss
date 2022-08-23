@@ -1,0 +1,7 @@
+@import '../variables.scss';
+
+.news-post-bg{display: flex; justify-content: center; align-items: center; padding: 0; background:$dark-white;
+    .post-img{display: inline-block;
+         img{max-width:100%;}
+    }
+}

@@ -1,0 +1,51 @@
+@import '../variables.scss';
+
+.how-work-section{background: $dark-white; padding-bottom: 10px;}
+
+.how-work-blocks{display: flex; flex-flow: row wrap; justify-content: space-between;
+    .how-work-block{width:49%; background: $white; padding: 30px; margin-bottom: 30px;
+        &.big-block{padding: 122px 30px;}
+        &.how-work-video{padding:0;max-height: 460px;
+            .video{height: 100%;
+                iframe, video{min-width: 100%; height: 100% !important; width:100% !important;}
+            }
+        }
+        &.yellow-block{background: $yellow;}
+        p{margin-bottom: 0; line-height: 25px;}
+
+    }
+}
+
+@media screen and (max-width:1440px){
+    .how-work-blocks{
+        .how-work-block{
+            &.big-block{padding: 30px;}
+        }
+    }
+}
+
+@media screen and (max-width:992px){
+    .how-work-blocks{flex-flow: column nowrap;
+        .how-work-block{width: 100%;
+            &.how-work-video{height: 50vw}
+        }
+    }
+}
+
+@media screen and (max-width: 666px){
+    .how-work-section{padding: 20px 0 0 0;}
+    .how-work-blocks{
+        .how-work-block{
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media screen and (max-width:522px){
+    .how-work-blocks{
+        .how-work-block{
+            .how-work-img{text-align:center}
+            p{text-align:center}
+        }
+    }
+}

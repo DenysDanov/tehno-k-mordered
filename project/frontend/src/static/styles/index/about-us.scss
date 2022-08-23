@@ -1,0 +1,43 @@
+@import './../variables.scss';
+
+.about-us-section{position: relative;
+  .wrapper{max-width: 100%;margin: 0}
+}
+.about-us-bg{position: absolute;z-index: 1;height: 100%;max-width: 100%;width: 100%;top: 0;left: 0;
+    img{height: 100%;width: 100%; object-fit: cover}
+}
+.about-us-content{position: relative;text-align: center;z-index: 2;margin: 0 auto;padding: 2% 0;
+    .about-text > *{max-width: 1200px;width: 100%;margin: 0 auto;padding: 30px 0 50px 0; line-height: 23px;}
+    .button{height: 60px; font-size: 14px;  padding: 13px 62px;}
+}
+
+@media screen and (max-width: 1440px){
+    .about-us-content{
+        .about-text > *{max-width: 90%}
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .about-us-content{padding: 1% 0 3% 0;
+        .section-title > * {margin:0; padding:0;}
+    }
+}
+
+@media screen and (max-width: 992px){
+    .about-us-bg{background: $yellow;
+        img{display: none;}
+    }
+}
+
+@media screen and (max-width: 666px){
+    .about-us-bg{background-color: $yellow; background-image: url("http://localhost:8000/static/images/about-mobile-bg.png"); background-position:50% 0%; background-repeat: no-repeat; background-size: 100%}
+    .about-us-content{
+        .section-title{ padding:0;
+            & > * {margin: 0}
+        }
+    }
+}
+
+@media screen and (max-width: 522px){
+    .about-us-bg{background-size: 100% 100%}
+}

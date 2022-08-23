@@ -1,0 +1,30 @@
+@import '../variables.scss';
+
+.pagination-section{padding: 0;}
+
+.pagination{display: flex; flex-flow: row nowrap; justify-content: center;
+    .item{width: 50px; height: 50px;text-align: center;
+        & > *{display: inline-block;color: $black; position: relative; width: 50px; height: 50px;border: 1px solid $light-grey; line-height: 50px; transition: 0.1s linear;
+            &:hover{text-decoration: none; background: $yellow; border: 1px solid $yellow;}
+            }
+        &.pagination-prev > *, &.pagination-next > *{background-color: $light-grey; background-repeat: no-repeat; background-position: center;border: 1px solid $light-grey;
+            &:hover{background-color:$yellow; border: 1px solid $yellow;}
+        }
+        &.pagination-prev > *{background-image: url("http://localhost:8000/static/images/arrow-prev.png")}
+        &.pagination-next > *{background-image: url("http://localhost:8000/static/images/arrow-next.png")}
+        &.pagination-active{background: $grey;  display: flex; justify-content: center; align-items: center; width:50px;
+            span{border: 1px solid $grey;
+                &:hover{background: $grey;}
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 435px){
+    .pagination{
+        .item{width: 35px; height: 35px;
+            & > *{width: 35px; height: 35px;line-height: 36px}
+            &.pagination-active{width:35px}
+        }
+    }
+}

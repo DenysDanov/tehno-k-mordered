@@ -1,0 +1,41 @@
+@import './../variables.scss';
+
+.important-services-section{padding-top: 0;
+    .wrapper{position: relative;}
+    .important-bg{
+        width: 574px;
+        height: 411px;
+        background: $yellow;
+        position: absolute;
+        top:0;
+        right:0;
+        z-index:-1;
+    }
+
+    .important-blocks{display: flex;flex-flow:row nowrap;margin: 0 -15px;
+        .important-block{margin: 0 15px;width:calc((100% - 30px)/4);background:$white;box-shadow: 5px 0px 30px rgba(0, 0, 0, 0.1);padding: 35px 20px 30px 20px;
+            .important-title > *{font-size:16px;line-height: 25px;text-transform: none}
+            p{line-height: 25px;margin: 0;}
+        }
+    }
+}
+
+@media screen and (max-width: 992px){
+    .important-services-section{padding-bottom: 10px;
+        .important-blocks{flex-wrap:wrap;
+            .important-block{width:calc((100% - 60px) / 2);margin-bottom: 30px;}
+        }
+    }
+}
+
+@media screen and (max-width:800px){
+    .important-bg{display: none;}
+}
+
+@media screen and (max-width:666px){
+    .important-services-section{padding-bottom: 10px;
+        .important-blocks{flex-wrap:wrap;
+            .important-block{width:calc(100% - 30px);margin: 0 15px 20px 15px;text-align: center;}
+        }
+    }
+}

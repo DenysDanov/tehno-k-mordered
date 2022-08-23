@@ -1,0 +1,52 @@
+
+@import '../variables.scss';
+
+.button{
+  border-radius: 2px;
+  transition: all 0.2s ease-in;
+  border: none;
+  font-family: Futura PT;
+  line-height: 34px;
+  padding: 13px 62px;
+  text-align: center;
+  max-width: 250px;
+  width: 250px;
+  height: 60px;
+  display: inline-block;
+
+  &:hover{text-decoration: none}
+
+  &.yellow{
+    background: $yellow;
+    color: $black;
+
+    &:hover{
+      background: $light-red;
+      color: $white;
+    }
+  }
+
+  &.black{
+    background: $dark-brown;
+    color: $white;
+
+    &:hover{
+      color: $black;
+      background: $yellow
+    }
+  }
+
+  &.red{
+    background: $light-red;
+    color: $white;
+
+    &:hover{
+      color: $white;
+      background: $black;
+    }
+  }
+}
+
+@media screen and (max-width: 767px){
+  a.button{display: inline-block; width: 100%}
+}

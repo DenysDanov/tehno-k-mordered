@@ -4,9 +4,6 @@ from django.contrib import admin, messages
 from .models import *
 
 
-
-
-
 class SubtitlesInline(admin.StackedInline):
     model = NewsSubtitle
     extra = 1

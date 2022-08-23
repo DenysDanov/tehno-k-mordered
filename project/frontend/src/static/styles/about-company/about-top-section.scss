@@ -1,0 +1,88 @@
+@import './../variables.scss';
+
+.about-company-section{
+    .text > *{margin: 0;}
+}
+
+.about-top-content{display: flex; flex-flow: row nowrap; justify-content: space-between;
+    .about-content{width:60%;}
+}
+
+
+.about-form-block{width: 25%;box-shadow: 5px 0px 30px rgba(0, 0, 0, 0.1);padding: 60px 20px; text-align: center;margin-bottom: 50px;display: flex;flex-flow: column nowrap; justify-content: space-between;
+    .form-title > *{color:$yellow;font-size:20px; line-height: 28px; margin: 0 0 20px 0;}
+    .form-text{
+        &.grey{color:$grey;}
+    }
+    .form{display: flex;flex-flow: column nowrap;
+        .form-row{width: 250px;display: inline-flex;margin-right: 2%;flex-flow: column nowrap;position: relative}
+        .form-inputs{padding:40px 0 30px 0}
+        input{border: 1px solid $grey; width: 100%; margin: 0 0 20px 0;}
+        .errorText{position: absolute;bottom:0;}
+        .button{width:100%;}
+    }
+}
+
+@media screen and (max-width:1440px){
+    .content-blocks{
+        .about-block{
+            .about-info{padding: 15px;}
+        }
+    }
+    .about-form-block{width: 36%;
+        .form{
+            .form-inputs{padding:30px 10px 20px 10px;}
+        }
+    }
+}
+
+@media screen and (max-width: 1024px){
+   .about-top-content{
+        .content-blocks{ margin-left: 0}
+    }
+}
+
+@media screen and (max-width: 992px){
+    .about-top-content{flex-flow: column nowrap;
+        .about-content{width:100%;}
+        .content-blocks{margin: 40px 0;}
+    }
+    .about-form-block{width: 100%;box-shadow: 5px 0px 30px rgba(0, 0, 0, 0.1);padding: 40px 20px; text-align: center;margin-bottom: 40px;display: flex;flex-flow: column nowrap;     justify-content: space-between;
+        .form-title > *{color:$yellow;font-size:20px; line-height: 28px; margin: 0 0 20px 0;}
+        .form-text{width: 250px; margin: 0 auto;
+            &.grey{color:$grey;}
+        }
+        .form{display: flex;flex-flow: column nowrap;
+            .form-inputs{padding:40px 0 30px 0; display: flex; flex-flow: column nowrap; margin: 0 auto;}
+            .form-text{}
+            input{border: 1px solid $grey; width: 250px; margin: 0 0 20px 0;
+                &::placeholder{text-align:center !important;}
+            }
+            .button{width:100%;}
+        }
+    }
+}
+
+@media screen and (max-width: 666px){
+    .about-company-section{padding-bottom: 20px;}
+    .about-top-content{
+        .content-blocks{margin: 20px 0;}
+    }
+    .about-form-block{padding: 20px; margin-bottom: 20px;}
+}
+
+@media screen and (max-width: 435px){
+    .about-company-section{
+        .text{padding: 0 15px;
+            & > *{text-align:center;}
+        } 
+    }
+
+    .about-form-block{
+        .form-text > p{line-height:18px;}
+    }
+
+    .about-top-content{margin:0 -15px;
+        .about-content{background:$dark-white;padding-top: 20px;}
+    }
+}
