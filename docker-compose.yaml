@@ -1,0 +1,92 @@
+version: '3'
+
+services:
+  app: &app
+    image: spoon:latest
+    volumes:
+      - nfsmount:/app
+
+  db:
+    image: postgres:13.2-alpine
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+    volumes:
+      - db:/var/lib/postgresql/data/
+    ports:
+      - 5434:5432
+
+  dockerize:
+    image: jwilder/dockerize
+    command: dockerize -wait tcp://db:5432 -timeout 10s
+    depends_on:
+      - db
+
+  pgadmin:
+    image: dpage/pgadmin4:4.14
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "test@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "testpass"
+    ports:
+      - "8888:80"
+    depends_on:
+      - db
+
+  redis:
+    image: redis:6
+    volumes:
+      - redis:/data
+    ports:
+      - 6379:6379
+
+  celery:
+    <<: *app
+    command: celery -A project worker -l info
+    environment:
+      - CELERY_REDIS=redis://redis:6379
+    depends_on:
+      - dockerize
+      - redis
+
+  runserver:
+    <<: *app
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - 8000:8000
+    depends_on:
+      - dockerize
+      - celery
+      - redis
+    env_file:
+      - .env
+
+  shell:
+    <<: *app
+    depends_on:
+      - dockerize
+
+  extract:
+    <<: *app
+    volumes:
+      - .:/host
+
+#volumes:
+#  db:
+#  redis:
+#  nfsmount:
+#    driver: local
+#    driver_opts:
+#      type: nfs
+#      o: addr=host.docker.internal,rw,nolock,hard,nointr,noatime,nfsvers=3
+#      device: ":${PWD}"
+
+
+# for linux PC
+volumes:
+  db:
+  redis:
+  nfsmount:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: "${PWD}"

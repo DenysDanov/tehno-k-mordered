@@ -1,3 +1,4 @@
+import environ
 import os
 import sys
 
@@ -9,15 +10,14 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
-SECRET_KEY = os.getenv('SECRETKEY')
-DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
-ALLOWED_HOSTS = [
-    '127.0.0.1',
-    '127.0.01',
-    'localhost',
-    ]
+SECRET_KEY = env.str("SECRETKEY")
+DEBUG = env.bool("DEBUG", False)
+
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 
 PROJECT_ROOT = os.path.dirname(__file__)
 sys.path.insert(0, os.path.join(PROJECT_ROOT, 'apps'))
@@ -82,11 +82,11 @@ TEMPLATES = [
 WSGI_APPLICATION = "project.wsgi.application"
 
 
-POSTGRES_DB_NAME = os.getenv('POSTGRES_DB_NAME')
-POSTGRES_DB_USER = os.getenv('POSTGRES_DB_USER')
-POSTGRES_DB_PASSWORD = os.getenv('POSTGRES_DB_PASSWORD')
-POSTGRES_DB_HOST = os.getenv('POSTGRES_DB_HOST')
-POSTGRES_DB_PORT = os.getenv('POSTGRES_DB_PORT')
+POSTGRES_DB_NAME = env.str('POSTGRES_DB_NAME')
+POSTGRES_DB_USER = env.str('POSTGRES_DB_USER')
+POSTGRES_DB_PASSWORD = env.str('POSTGRES_DB_PASSWORD')
+POSTGRES_DB_HOST = env.str('POSTGRES_DB_HOST')
+POSTGRES_DB_PORT = env.str('POSTGRES_DB_PORT')
 
 DATABASES = {
     'default': {
